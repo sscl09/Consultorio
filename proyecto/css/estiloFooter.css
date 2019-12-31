@@ -1,0 +1,70 @@
+/*
+    Estilo del footer
+    Consultorio pediátrico 
+    Mintsof
+*/
+
+footer{
+    padding: 30px 45px; 
+    background-color: #406D96;
+    text-align: center;
+    color: #A8D0DA;
+}
+
+footer a{
+    color: #A8D0DA;
+    font-size: 16px;
+}
+
+footer a:hover{
+    color: #2F3A56;
+    text-decoration: none;
+
+}
+
+footer a:focus{
+    color: #AAA;
+    text-decoration: none;
+}
+
+footer .iconos-redes-sociales > a{
+    display: inline-block;
+    background: #2F3A56;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    color:#A8D0DA;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+footer div.row > div {
+    margin-bottom: 15px;
+}
+
+
+@media only screen and (min-width: 768px){
+    footer{
+        padding: 30px 45px;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    footer .pie-derecho{
+        text-align: right;
+    }
+
+    footer .pie-izquierdo{
+        position: relative;
+        bottom: -20px;
+    }
+
+    footer .iconos-redes-sociales > a{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+    }
+}

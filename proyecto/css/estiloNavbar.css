@@ -1,0 +1,26 @@
+/*
+    Estilo del navbar
+    Consultorio pediátrico 
+    Mintsof
+*/
+
+nav {
+    background-color:#A8DDDA;
+} 
+
+nav a{
+    color:#406D96;
+    font-size: 16px;
+}
+
+nav a:hover{
+    color:#2F3A56;
+    text-decoration: none;
+
+}
+
+nav a:focus{
+    color:#D8E8E8;
+    text-decoration: none;
+}
+

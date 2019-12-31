@@ -1,0 +1,66 @@
+/*
+    Estilo principal
+    Consultorio pediátrico 
+    Mintsof
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 100px;
+    padding-left: 0;
+    padding-bottom: 350px;
+    /* background-color:#D8E8E8; */
+    color: #2F3A56;
+}
+
+.errores{
+    list-style: none;
+    padding: 10px;
+}
+
+.error {
+    color: red;    
+}
+
+@media only screen and (min-width: 768px){
+    body{
+        padding-bottom: 200px;
+    }
+}
+
+.campo-contenedor {
+    position: relative;
+    width: 100%;
+}  
+
+
+.campo-contenedor .fa {
+    position: absolute;
+    padding: 10px;
+    z-index: 3;
+    font-size: 17px;
+    color:#A8D0DA;
+}
+.fa-calendar{
+    font-size: 17px;
+    color:#A8D0DA;
+    padding: 10px;
+}
+
+.campo-contenedor .icono-izquierdo {
+    left: 0;
+}
+
+.campo-contenedor .icono-derecho {
+    right: 0;
+}
+
+.campo-contenedor input {
+    padding: 0 30px;
+}
+
