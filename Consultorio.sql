@@ -160,13 +160,13 @@ CREATE TABLE Antecedentes_Perinatales(
 	ID_Paciente 					Integer NOT NULL,
 
 	#DATOS GENERALES
-	Peso 							Decimal(4, 1) NULL check (Peso > 0),
+	Peso 							Decimal(4, 2) NULL check (Peso > 0),
 	Talla 							Decimal(4, 1) NULL check (Talla > 0),
-	Edad_gestacional 				SmallInt NULL check (Edad_gestacional >= 22 and Edad_gestacional <= 50),
-	Apgar 							SmallInt NULL check (Apgar >= 1 and Apgar <= 10),
-	Silverman_Andersen 				SmallInt NULL check (Silverman_Andersen >= 1 and Silverman_Andersen <= 10),
+	Edad_gestacional 				SmallInt NULL check (Edad_gestacional >= 30 and Edad_gestacional <= 41),
+	Apgar 							SmallInt NULL check (Apgar >= 0 and Apgar <= 10),
+	Silverman_Andersen 				SmallInt NULL check (Silverman_Andersen >= 0 and Silverman_Andersen <= 10),
 	Via_Nacimiento 					VarChar(32)	NULL check ( Via_Nacimiento in ('Parto', 'Cesárea')),
-	Tipo_Anestesia 					VarChar(32)	NULL check ( Tipo_Anestesia in (' Bloqueo peridural ',' Anestesia general') ),
+	Tipo_Anestesia 					VarChar(32)	NULL check ( Tipo_Anestesia in ('Bloqueo peridural','Anestesia general', 'Ninguna') ),
 	Complicaciones 					Varchar(256) NULL,
 	Lugar_Nacimiento 				Varchar(256) NULL,
 	Nombre_Hospital 				Varchar(256) NULL,	
@@ -256,7 +256,7 @@ CREATE TABLE Antecedentes_Patologicos (
 	Padecimiento 					Varchar(256) NOT NULL,
 	Duracion 						Varchar(64) NOT NULL,
 	Tratamiento 					Varchar(256) NOT NULL,
-	Edad_previa 					Varchar(64) NOT NULL,
+	Fecha 							Date NOT NULL,
 	Descripcion						Varchar(512) NULL,
 
 	#CONSTRAINTS
@@ -283,3 +283,6 @@ CREATE TABLE Tratamiento (
 	CONSTRAINT FK_ID_Medicamento_Tratamiento FOREIGN KEY (ID_Medicamento) REFERENCES Medicamento(ID_Medicamento),
 	CONSTRAINT FK_ID_Consulta_Tratamiento FOREIGN KEY (ID_Consulta) REFERENCES Consulta (ID_Consulta)
 );
+
+
+INSERT INTO `Administrador`(`Nombre`, `Apellido_paterno`, `Apellido_materno`, `Domicilio`, `Telefono`, `Password`, `Correo`) VALUES ("Karen","Jiménez","Zavala","Calle José Cecilio Ortega Mz. 16 Lt. 3 col. Las peñas, Iztapalapa CDMX C.P. 09750", "5591622838","$2y$10$0EIXsbv76GkG/uulYIElVeH8NxPBosOVWNl2EPkfxx6aNOfBExMou","karen@micorreo.com");
