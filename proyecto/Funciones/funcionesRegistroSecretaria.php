@@ -20,7 +20,7 @@
         $password = limpiarInformacion ($_POST['password']);
         $password = password_hash($password, PASSWORD_DEFAULT);
 
-        $declaracion = $con -> prepare("INSERT INTO `Secretaria` (`Nombre`, `Apellido_paterno`, `Apellido_materno`, `Domicilio`, `Telefono`, `Correo`,`Password`) VALUES ( ?, ?, ?, ?, ?, ?, ?");
+        $declaracion = $con -> prepare("INSERT INTO `Secretaria` (`Nombre`, `Apellido_paterno`, `Apellido_materno`, `Domicilio`, `Telefono`, `Correo`,`Password`) VALUES ( ?, ?, ?, ?, ?, ?, ?)");
 
         $declaracion -> bind_param("sssssss", $nombre, $apellido_paterno, $apellido_materno, $domicilio, $telefono, $correo,$password);
         $declaracion -> execute();

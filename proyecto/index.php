@@ -10,8 +10,6 @@
     <div class="container" id="pagina-principal">
       <h1>Página principal</h1>
       
-        
-        
     </div>
 
 <?php

@@ -42,6 +42,49 @@ $(document).ready(function(){
         }
     }, 'El correo electrónico o teléfono no es válido');
 
+    $.validator.addMethod('ValidarPeso', function(value, element){
+        return this.optional(element) || /^[0-9.]/.test(value.trim());
+    }, 'El peso debe ser un número entre 0.500 y 6.00');
+
+    $.validator.addMethod('ValidarTalla', function(value, element){
+        return this.optional(element) || /^[0-9.]/.test(value.trim());
+    }, 'La talla debe ser un número entre 35.0 y 60.0');
+
+    $.validator.addMethod('EdadGestacional', function(value, element){
+        return this.optional(element) || /^[0-9]/.test(value.trim());
+    }, 'La edad gestacional debe ser un número entero entre 30 y 41');
+    
+    $.validator.addMethod('ValidarComplicaciones', function(value, element){
+        return this.optional(element) || /[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]$/g.test(value.trim());
+    }, 'Las complicaciones en el nacimiento solo pueden contener letras y números');
+
+    $.validator.addMethod('ValidarNombre', function(value, element){
+        return this.optional(element) || /[a-záéíóúÁÉÍÓÚñÑ\s]$/i.test(value.trim());
+    }, 'Nombre(s) solo puede contener letras');
+
+    $.validator.addMethod('ValidarNombreHospital', function(value, element){
+        return this.optional(element) || /[a-z0-9áéíóúÁÉÍÓÚñÑ\s]$/i.test(value.trim());
+    }, 'El nombre del hospital solo puede contener letras y números');
+
+    $.validator.addMethod('ValidarLugar', function(value, element){
+        return this.optional(element) || /[a-záéíóúÁÉÍÓÚñÑ\s]$/i.test(value.trim());
+    }, 'El lugar de nacimiento solo puede contener letras');
+
+    $.validator.addMethod('ValidarPadecimiento', function(value, element){
+        return this.optional(element) || /[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]$/i.test(value.trim());
+    }, 'El padecimiento solo puede contener letras y números');
+
+    $.validator.addMethod('ValidarDuracion', function(value, element){
+        return this.optional(element) || /[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]$/i.test(value.trim());
+    }, 'La duración solo puede contener letras y números');
+
+    $.validator.addMethod('ValidarTratamiento', function(value, element){
+        return this.optional(element) || /[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]$/i.test(value.trim());
+    }, 'El tratamiento solo puede contener letras y números');
+
+    $.validator.addMethod('ValidarDescripcion', function(value, element){
+        return this.optional(element) || /[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]$/i.test(value.trim());
+    }, 'La descripción solo puede contener letras y números');
 
     $("#registro-medico").validate({
         errorPlacement: function(error, element){
@@ -314,5 +357,64 @@ $(document).ready(function(){
             }
         }
     });
+
+    
+
+    $("#registro-antecente-patologico").validate({
+        rules:{
+            padecimiento:{
+                required: true,
+                ValidarPadecimiento: true,
+                minlength: 5,
+                maxlength: 250
+            },
+            duracion:{
+                required: true,
+                ValidarDuracion: true,
+                minlength: 5,
+                maxlength: 60
+            },
+            fecha:{
+                required: true,
+            },
+            tratamiento:{
+                required: true,
+                ValidarTratamiento: true,
+                minlength: 5,
+                maxlength: 250
+            },
+            descripcion:{
+                ValidarDomicilio: true,
+                ValidarDescripcion: true,
+                maxlength: 510
+            }
+            
+        },
+        messages:{
+            padecimiento:{
+                required: 'El padecimiento es un campo requerido',
+                minlength: 'El padecimiento debe contener por lo menos 5 letras',
+                maxlength: 'El padecimiento debe contener máximo 250 letras'
+            },
+            duracion:{
+                required: 'La duración es un campo requerido',
+                minlength: 'La duración debe contener por lo menos 5 letras',
+                maxlength: 'La duración debe contener máximo 60 letras'
+            },
+            fecha:{
+                required: 'La fecha es un campo requerido'
+            },
+            tratamiento:{
+                required: 'El tratamiento es un campo requerido',
+                minlength: 'El tratamiento debe contener por lo menos 5 letras',
+                maxlength: 'El tratamiento debe contener máximo 250 letras'
+            },
+            descripcion:{
+                minlength: 'La descripción debe contener por lo menos  10 letras',
+                maxlength: 'La descripción debe contener máximo 500 letras'
+            }
+        }
+    });
+
 
 });

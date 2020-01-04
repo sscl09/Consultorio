@@ -52,6 +52,12 @@ body{
     padding: 10px;
 }
 
+.fa-hourglass{
+    font-size: 17px;
+    color:#A8D0DA;
+    padding: 10px;
+}
+
 .campo-contenedor .icono-izquierdo {
     left: 0;
 }

@@ -123,8 +123,8 @@ CREATE TABLE Vacuna (
 	#DATOS GENERALES
 	Nombre 							Varchar(256) NOT NULL,
 	Endermadad						Varchar(256) NOT NULL,
-	Dosis							SmallInt NOT NULL	check (Dosis >= 1),
-	Edad_Recomendada				TinyInt NOT NULL	check (Edad_Recomendada >= 1),
+	Dosis							Varchar(256) NOT NULL,
+	Edad_Recomendada				TinyInt NOT NULL	check (Edad_Recomendada >= 0),
 
 	#CONSTRAINTS
 	CONSTRAINT PK_ID_Vacuna PRIMARY KEY (ID_Vacuna),
@@ -286,3 +286,33 @@ CREATE TABLE Tratamiento (
 
 
 INSERT INTO `Administrador`(`Nombre`, `Apellido_paterno`, `Apellido_materno`, `Domicilio`, `Telefono`, `Password`, `Correo`) VALUES ("Karen","Jiménez","Zavala","Calle José Cecilio Ortega Mz. 16 Lt. 3 col. Las peñas, Iztapalapa CDMX C.P. 09750", "5591622838","$2y$10$0EIXsbv76GkG/uulYIElVeH8NxPBosOVWNl2EPkfxx6aNOfBExMou","karen@micorreo.com");
+
+
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("BCG","Tuberculosis","Única",0);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Hepatitis B","Hepatitis B","Primera",0);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Hepatitis B","Hepatitis B","Segunda",2);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Hepatitis B","Hepatitis B","Tercera",6);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Pentavalente acelular DPaT + VPI + Hbi","Difteria, Tosferina, Tétanos, Poliomielitis, Infecciones por H. Influenzae b", "Primera", 2);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Pentavalente acelular DPaT + VPI + Hbi","Difteria, Tosferina, Tétanos, Poliomielitis, Infecciones por H. Influenzae b", "Segunda",4);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Pentavalente acelular DPaT + VPI + Hbi","Difteria, Tosferina, Tétanos, Poliomielitis, Infecciones por H. Influenzae b", "Tercera",6);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Pentavalente acelular DPaT + VPI + Hbi","Difteria, Tosferina, Tétanos, Poliomielitis, Infecciones por H. Influenzae b", "Cuarta",18);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("DPT","Difteria, Tosferina, Tétanos","Refuerzo",48);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Rotavirus","Diarrea por rotavirus","Primera",2);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Rotavirus","Diarrea por rotavirus","Segunda",4);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Rotavirus","Diarrea por rotavirus","Tercera",6);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Neumocócina conjugada","	Infecciones por neumococo","Primera",2);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Neumocócina conjugada","	Infecciones por neumococo","Segunda",4);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Neumocócina conjugada","	Infecciones por neumococo","Tercera",6);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Influeza","Influeza","Primera",2);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Influeza","Influeza","Segunda",4);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Influeza","Influeza","Revacunación", 59);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("SRP","Sarampión, Rubéola, Parotiditis","Primera",12);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("SRP","Sarampión, Rubéola, Parotiditis","Segunda",72);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Varicela","Varicela","Única",12);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Hepatitis A","Hepatitis A","Primera",12);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("Hepatitis A","Hepatitis A","Refuerzo",18);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("SABIN","Poliomielitis","Adicional",0);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("SR","Sarampión y Rubéola","Adicional",0);
+INSERT INTO `Vacuna`(`Nombre`, `Endermadad`, `Dosis`, `Edad_Recomendada`) VALUES ("VPH","Virus del papiloma humano","Adicional (solo niñas)",132);
+
+

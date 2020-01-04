@@ -32,7 +32,24 @@
             'fecha_nacimiento' => [
                 'patron' => '/^[0-9-]{10}/',
                 'error' => 'El formato de la fecha de nacimiento es incorrecto'
+            ],
+            'padecimiento' => [
+                'patron' => '/^[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]{4,128}$/i',
+                'error' => 'El padecimiento solo puede contener letras y números'
+            ],
+            'duracion' => [
+                'patron' => '/^[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]{4,128}$/i',
+                'error' => 'La duración solo puede contener letras y números'
+            ],
+            'fecha' => [
+                'patron' => '/^[0-9-]{10}/',
+                'error' => 'El formato de la fecha es incorrecto'
+            ],
+            'tratamiento' => [
+                'patron' => '/^[a-z0-9áéíóúÁÉÍÓÚñÑ.,\s]{4,256}$/i',
+                'error' => 'La duración solo puede contener letras y números'
             ]
+
         ];
         return $formatoCampos;
     }

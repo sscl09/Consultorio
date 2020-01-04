@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/estiloRegistro.css">
     <link rel="stylesheet" href="css/estiloRegistro.css">
     <link rel="shortcut icon" href="img/hospital.png">
+    <link rel="stylesheet" href="css/estiloAgenda.css">
 
 
     <title><?php echo $titulo ?? "Consultorio Pediátrico" ?></title>
