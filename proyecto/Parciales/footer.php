@@ -13,7 +13,7 @@
           <!-- Enlaces internos -->
           <div class="col-sm-6 order-sm-0 pie-izquierdo">
             <a href="index.php">Inicio</a> |
-            <a href="#">Contacto</a>
+            <a href="contacto.php">Contacto</a>
           </div>
 
         </div>

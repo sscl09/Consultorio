@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/estiloFooter.css">
     <link rel="stylesheet" href="css/estiloNavbar.css">
     <link rel="stylesheet" href="css/estiloRegistro.css">
-    <link rel="stylesheet" href="css/estiloRegistro.css">
+    <link rel="stylesheet" href="css/estiloContacto.css">
+    <link rel="stylesheet" href="css/estiloIndex.css">
     <link rel="shortcut icon" href="img/hospital.png">
     <link rel="stylesheet" href="css/estiloAgenda.css">
 

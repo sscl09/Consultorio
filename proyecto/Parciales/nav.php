@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="enlaces">
           <ul class="nav navbar-nav ml-auto">
             <li><a class="nav-item nav-link" href="index.php">Inicio</a></li>
-            <li><a class="nav-item nav-link" href="#">Contacto</a></li>
+            <li><a class="nav-item nav-link" href="contacto.php">Contacto</a></li>
             
             
             <!-- Vericar si hay una sesion activa -->
