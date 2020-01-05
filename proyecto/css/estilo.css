@@ -52,7 +52,7 @@ body{
     font-size: 17px;
     color:#A8D0DA;
 }
-.fa-calendar{
+.fa-calendar, .fa-ellipsis-h, .fa-list-alt, .fa-map-marker, .fa-thumb-tack, .fa-h-square, .fa-ambulance, .fa-medkit, .fa-glass{
     font-size: 17px;
     color:#A8D0DA;
     padding: 10px;

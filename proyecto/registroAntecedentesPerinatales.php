@@ -101,7 +101,7 @@
 
             <div class="row">
               <div class="col-sm-4">
-                <span> <i class="fa fa-calendar icono-izquierdo"></i>Puntuación Apgar</span>
+              <span> <i class="fa fa-list-alt icono-izquierdo"></i>Puntuación Apgar</span>
               </div>
 
               <div class="col-sm-2">
@@ -128,7 +128,7 @@
               </div>
 
               <div class="col-sm-3">
-                <span> <i class="fa fa-calendar icono-izquierdo"></i>Vía de nacimiento</span>
+                <span> <i class="fa fa-ambulance icono-izquierdo"></i>Vía de nacimiento</span>
               </div>
 
               <div class="col-sm-3">
@@ -149,7 +149,7 @@
 
             <div class="row">
               <div class="col-sm-4">
-                <span> <i class="fa fa-calendar icono-izquierdo"></i>Silverman-Andersen</span>
+                <span> <i class="fa fa-list-alt icono-izquierdo"></i>Silverman-Andersen</span>
               </div>
 
               <div class="col-sm-2">
@@ -176,7 +176,7 @@
               </div>
               
               <div class="col-sm-3">
-                <span> <i class="fa fa-calendar icono-izquierdo"></i>Tipo de anestesia</span>
+                <span> <i class="fa fa-medkit icono-izquierdo"></i>Tipo de anestesia</span>
               </div>
 
               <div class="col-sm-3">
@@ -202,7 +202,7 @@
                 <div class="form-group">
                   <div class="input-group">                  
                     <div class="campo-contenedor">
-                      <span> <i class="fa fa-user icono-izquierdo"></i></span>
+                      <span> <i class="fa fa-hospital-o icono-izquierdo"></i></span>
                       <input type="text" class="form-control" name="Nombre_Hospital" value="<?php echo $_POST['Nombre_Hospital'] ?? '' ?>" placeholder="Hospital de nacimiento" tabindex="2">
                     </div>
                   </div>
@@ -212,7 +212,7 @@
                 <div class="form-group">
                   <div class="input-group">                  
                     <div class="campo-contenedor">
-                      <span> <i class="fa fa-user icono-izquierdo"></i></span>
+                      <span> <i class="fa fa-thumb-tack icono-izquierdo"></i></span>
                       <input type="text" class="form-control" name="Lugar_Nacimiento" value="<?php echo $_POST['Lugar_Nacimiento'] ?? '' ?>" placeholder="Lugar de nacimiento" tabindex="3">
                     </div>
                   </div>

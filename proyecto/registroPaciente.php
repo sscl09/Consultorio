@@ -40,7 +40,7 @@
           <hr>
 
           <?php if(!empty($errores)){echo mostrarErrores($errores);} ?>
-
+          
           <!-- Formulario de registro -->
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" id = "registro-paciente" >
             <input type="hidden" name="ficha" value="<?php echo fichaCSRF(); ?>">
@@ -130,5 +130,6 @@
   require_once('Parciales/footer.php');
 
 ?>
+
 
 

@@ -7,6 +7,8 @@
     <script src="js/messages_es.min.js"></script>
     <script src="js/validacion.js"></script>
     <script src="js/principal.js"></script>
+    <script type="text/javascript" src="js/folder.js"></script>
+
     
     <script src="js/agenda.js"></script>
 

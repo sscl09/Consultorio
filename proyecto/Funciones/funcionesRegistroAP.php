@@ -23,11 +23,7 @@
         $declaracion -> close();
         $con -> close();
 
-        if($resultado == 1){
-            $_SESSION['usuarioNuevo'] = "Listo";
-            header('Location: registroExitoso.php');
-        }
-        else{
+        if($resultado != 1){
             $errores[] = 'Algo salió mal. Inténtelo más tarde';
         }
     
@@ -73,8 +69,7 @@
         $con -> close();
 
         if($resultado == 1){
-            $_SESSION['usuarioNuevo'] = "Listo";
-            header('Location: registroExitoso.php');
+            header('Location: registroTutor.php');
         }
         else{
             $errores[] = 'Algo salió mal. Inténtelo más tarde';

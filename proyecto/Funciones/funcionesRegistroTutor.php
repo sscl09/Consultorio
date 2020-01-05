@@ -50,7 +50,11 @@
         $declaracion -> close();
         $con -> close();
 
-        if($resultado != 1){
+        if($resultado == 1){
+            $_SESSION['usuarioNuevo'] = " un paciente";
+            header('Location: registroExitoso.php');
+        }
+        else{
             $errores[] = 'Algo salió mal. Inténtelo más tarde';
         }
         

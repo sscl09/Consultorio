@@ -48,7 +48,7 @@
                 <div class="form-group">
                   <div class="input-group">                  
                     <div class="campo-contenedor">
-                      <span> <i class="fa fa-stethoscope icono-izquierdo"></i></span>
+                      <span> <i class="fa fa-heartbeat icono-izquierdo"></i></span>
                       <input type="text" class="form-control" name="padecimiento" value="<?php echo $_POST['padecimiento'] ?? '' ?>" placeholder="Padecimiento" tabindex="1" autofocus>
                     </div>
                   </div>
