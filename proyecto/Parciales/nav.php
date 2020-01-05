@@ -46,7 +46,7 @@
                     </li>
                 ';
               }
-              elseif (isset($_SESSION['administrador'])){
+              if (isset($_SESSION['administrador'])){
                 echo'
                       <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -72,6 +72,24 @@
                     </li>
                 ';
                 
+              }
+              if (isset($_SESSION['secretaria'])){
+                echo'
+                    <li><a class="nav-item nav-link" href="agenda.php">Agenda</a></li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        '.$_SESSION['secretaria'].' 
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Perfil</a>
+                        <a class="dropdown-item" href="#">Cuenta</a>
+                        <a class="dropdown-item" href="#">Preferencias</a>
+                        <hr></hr>
+                        <a class="dropdown-item" href="logout.php">Log out</a>
+                      </div>
+                    </li>
+                ';
               }
               else{
                 echo'
