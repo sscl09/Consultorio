@@ -4,6 +4,11 @@
     Mintsof
 */
 
+html {
+    min-height: 100%;
+    position: relative;
+  }
+
 *{
     padding: 0;
     margin: 0;
@@ -11,9 +16,10 @@
 }
 
 body{
+    margin: 0;
     padding-top: 100px;
     padding-left: 0;
-    padding-bottom: 350px;
+    padding-bottom: 400px;
     /* background-color:#D8E8E8; */
     color: #2F3A56;
 }
@@ -52,12 +58,22 @@ body{
     padding: 10px;
 }
 
+.fa-search{
+    font-size: 17px;
+    color:#A8D0DA;
+    padding: 10px;
+}
+
 .fa-hourglass{
     font-size: 17px;
     color:#A8D0DA;
     padding: 10px;
 }
 
+.edit{
+    font-size: 30px;
+    color:#A8D0DA;
+}
 .campo-contenedor .icono-izquierdo {
     left: 0;
 }
@@ -70,3 +86,23 @@ body{
     padding: 0 30px;
 }
 
+tbody th {
+    font-weight: normal;
+}
+
+thead{
+    background-color: rgb(177, 223, 235);
+}
+
+thead th{
+    font-size: 15px;
+}
+
+#caja_busqueda{
+    width: 100%;
+}
+
+.obtener{
+    background-color: transparent;
+    border: transparent;
+}

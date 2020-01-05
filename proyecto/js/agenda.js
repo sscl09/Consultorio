@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-
+    var urlDir = "Funciones/funcionesAgenda.php"
     var hoy = new Date();
     var mes = (hoy.getMonth() +1) < 10 ? '0' + (hoy.getMonth() +1) : (hoy.getMonth() +1);
     var dia = hoy.getDate() < 10 ? '0' + hoy.getDate() : hoy.getDate();
@@ -130,7 +130,7 @@ $(document).ready(function(){
                             "cursor": "pointer"
                         });
                         var coordenadas = $(this).position();
-                        var r = coordenadas.left+$(this).width()+10;
+                        var r = coordenadas.left+$(this).width()-15;
                         $("#Btn_editar").css({
                             "top": coordenadas.top,
                             "left": r,
@@ -236,7 +236,7 @@ $(document).ready(function(){
     function ObtenerColumna(fecha){
         var out = $.ajax({
             type: "POST", 
-            url: "confg.php", 
+            url: urlDir,
             async: false,
             data: 'fecha='+fecha,
             success: function(data) {  
@@ -249,7 +249,7 @@ $(document).ready(function(){
     function ObtenerColumnaID(fecha){
         var out = $.ajax({
             type: "POST", 
-            url: "confg.php", 
+            url: urlDir, 
             async: false,
             data: 'fechaID='+fecha,
             success: function(data) {  
@@ -262,7 +262,7 @@ $(document).ready(function(){
     function ObtenerDiaSiguiente(fecha){
         var out = $.ajax({
             type: "POST", 
-            url: "confg.php",
+            url: urlDir,
             async: false,
             data: 'fechaSig='+fecha,
             success: function(data) {  
@@ -274,7 +274,7 @@ $(document).ready(function(){
     function ObtenerDiaAnterior(fecha){
         var out = $.ajax({
             type: "POST", 
-            url: "confg.php",
+            url: urlDir,
             async: false,
             data: 'fechaAnt='+fecha,
             success: function(data) {  
@@ -286,7 +286,7 @@ $(document).ready(function(){
     function ObtenerID(){
         var out = $.ajax({
             type: "POST", 
-            url: "confg.php",
+            url: urlDir,
             async: false,
             data: 'id=null',
             success: function(data) {  
@@ -299,7 +299,7 @@ $(document).ready(function(){
         var paquete = id +", "+idm+", \""+ nombre +"\", \""+ ApellidoPaterno +"\", \""+ ApellidoMaterno +"\", \""+ fecha + "\", \""+ Hora + "\", \"" + Descripcion + "\"";
         var out = $.ajax({
             type: "POST", 
-            url: "confg.php",
+            url: urlDir,
             async: false,
             data: 'insert=' + paquete,
             success: function(data) {  
@@ -311,7 +311,7 @@ $(document).ready(function(){
     function eliminar(id){
         $.ajax({
             type: "POST", 
-            url: "confg.php",
+            url: urlDir,
             async: false,
             data: 'delete=' + id,
             success: function(data) {  

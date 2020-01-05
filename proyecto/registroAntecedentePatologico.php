@@ -29,7 +29,7 @@
 ?>
 
     <!-- Contenedor principal : Cuerpo de la página -->
-    <div class="container" id="pagina-registro">
+    <div class="container" id="pagina-registro-antecedente-patologico">
       <div class="row">
         <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
           <h3>Registro de antecedentes patológicos</h3>

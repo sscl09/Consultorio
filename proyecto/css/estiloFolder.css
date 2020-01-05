@@ -1,0 +1,93 @@
+/*body{
+    font-family: "Courier New", Courier, monospace;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    height: 600px;
+    width: 1300px;
+    background-color: white;
+}*/
+
+#Contenedor{
+    height: 100%;
+    width: 100%;
+}
+
+#marcoSuperior{
+    width: 100%;
+    height: 17.5pt;
+    padding: 0;
+    border: 0;
+    z-index: 2;
+    
+}
+#marcoInferior{
+    padding: 2%;
+    width: 100% ;
+    height: 100%;
+    background-color: white;
+    text-align: justify;
+    
+    border: solid 2px grey;
+    border-collapse: collapse;
+    z-index: 1;
+}
+
+#marcoSuperior .pestana{
+    
+    /*Borde*/
+    border-radius: 10px 10px 0px 0px;
+    
+    display: inline;
+    width: auto;
+    height: 100%;
+    padding-right: 15px;
+    padding-left: 10px;
+    padding-bottom: 22px;
+    margin: 0px;
+    
+    
+    font-style: oblique;
+    font-weight: 400;
+    font-size: 12pt;
+    
+    background: white;
+    
+    border: solid 2px grey;
+}
+
+#marcoSuperior .pestana#P1{
+    position: relative;
+    color:#406D96;
+}
+
+#marcoSuperior .pestana#P2{
+    position: relative;
+    left: -9px; 
+    color:#406D96;
+}
+#marcoSuperior .pestana#P3{
+    position: relative;
+    left: -18px; 
+    color:#406D96;
+}
+#marcoSuperior .pestana#P4{
+    position: relative;
+    left: -27px; 
+    color:#406D96;
+}
+#marcoSuperior #reloj{
+    display: inline;
+    position: relative;
+    left: 20px; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+
+
+.contenidoPestana {
+    display: none;
+}

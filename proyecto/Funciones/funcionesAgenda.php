@@ -1,5 +1,15 @@
 <?php 
-    $link = mysqli_connect('localhost', 'root', '', 'Consultorio', 8080); 
+    //include "Recursos/conexion.php";
+    //require_once("Recursos/conexion.php");
+
+    $nombreServidor = "localhost";
+    $UsuarioBD = "root";
+    $PasswordDB = "";
+    $NombreDB = "Consultorio";
+    $puertoDB = "8080";
+    
+    $link = mysqli_connect($nombreServidor,$UsuarioBD,$PasswordDB,$NombreDB, $puertoDB); 
+
     setlocale(LC_ALL,"es_ES");
 
     $IDM = 1;
@@ -129,14 +139,14 @@
         echo  implode("%", ObtenerColumnaID($_POST['fechaID'])) ;
     }
     if(isset($_POST['fechaSig'])) {
-        $fecha = Date("Y-m-d", strtotime( $_POST['fechaSig'] . "+1 day" ));
+        $fecha = diaENE( $_POST['fechaSig'], '+1' );
         echo $fecha;
     }
     if(isset($_POST['id'])) {
         echo $IDM;
     }
     if(isset($_POST['fechaAnt'])) {
-        $fecha = Date("Y-m-d", strtotime( $_POST['fechaAnt'] . "-1 day" ));
+        $fecha = diaENE( $_POST['fechaAnt'], '-1' );
         echo $fecha;
     }
     if(isset($_POST['insert'])){
@@ -147,6 +157,27 @@
     if(isset($_POST['delete'])){
         $sqlAux = "DELETE FROM consultorio.cita WHERE ID_Cita=".$_POST['delete'].";";
         mysqli_query($link, $sqlAux);
+    }
+
+    function diaENE( $fecha, $n ){
+        global $IDM, $link, $dias;
+        $arregloDias = array();
+
+        $sql = "SELECT Dia d FROM consultorio.horario where ID_Medico=".$IDM;
+        $out = mysqli_query($link, $sql);
+
+        while ( $salida = mysqli_fetch_array($out)){
+            array_push($arregloDias, $salida['d']);
+        }
+        $num = 0;
+        do{
+            $fecha = Date("Y-m-d", strtotime( $fecha ." ". $n . " day" ));
+            $numero = intval(date('N', strtotime($fecha))) - 1;
+            $diaN = $dias[ $numero ];
+        } while ( !( in_array($diaN, $arregloDias) ) ); //
+
+        return $fecha;
+
     }
 
 

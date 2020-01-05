@@ -22,14 +22,14 @@
             <?php
               if (isset($_SESSION['medico'])){
                 echo'
-                    <li><a class="nav-item nav-link" href="#">Agenda</a></li>
+                    <li><a class="nav-item nav-link" href="agenda.php">Agenda</a></li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Pacientes 
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="registroPaciente.php">Registrar paciente</a>
-                        <a class="dropdown-item" href="#">Buscar paciente</a>
+                        <a class="dropdown-item" href="buscarPaciente.php">Buscar paciente</a>
                       </div>
                     </li>
                     <li class="nav-item dropdown">

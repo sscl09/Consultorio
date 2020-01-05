@@ -1,5 +1,6 @@
 <!-- Pie de página -->
-<footer class="fixed-bottom">
+<!-- <footer class="fixed-bottom"> -->
+<footer>
       <div class="container">
         <div class="row">
 

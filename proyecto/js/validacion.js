@@ -417,4 +417,60 @@ $(document).ready(function(){
     });
 
 
+    $("#registro-tutor").validate({
+        rules:{
+            nombre:{
+                required: true,
+                ValidarNombre: true,
+                minlength: 3
+            },
+            apellido_paterno:{
+                required: true,
+                ValidarApellidoPaterno: true,
+                minlength: 3
+            },
+            apellido_materno:{
+                required: true,
+                ValidarApellidoMaterno: true,
+                minlength: 3
+            },
+            domicilio:{
+                ValidarDomicilio: true,
+                minlength: 40,
+                maxlength: 250
+            },
+            correo:{
+                ValidarCorreo: true
+            },
+            telefono:{
+                ValidarTelefono: true,
+                minlength: 10,
+                maxlength: 10
+            }
+        },
+        messages:{
+            nombre:{
+                required: 'Nombre es un campo requerido',
+                minlength: 'El nombre debe contener por lo menos tres letras'
+            },
+            apellido_paterno:{
+                required: 'Apellido paterno es un campo requerido',
+                minlength: 'El apellido paterno debe contener por lo menos tres letras'
+            },
+            apellido_materno:{
+                required: 'Apellido materno es un campo requerido',
+                minlength: 'El apellido materno debe contener por lo menos tres letras'
+            },
+            domicilio:{
+                minlength: 'El domicilio es muy corto',
+                maxlength: 'El domicilio es muy largo'
+            },
+            telefono:{
+                minlength: 'El teléfono debe contener 10 dígitos',
+                maxlength: 'El teléfono debe contener 10 dígitos'
+            }
+        }
+    });
+
+
 });

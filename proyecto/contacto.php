@@ -1,6 +1,7 @@
 <?php
   session_start();
   $titulo = "Consultorio Pediátrico";
+  echo $_POST['id-paciente'];
   require_once('Parciales/arriba.php');
   require_once('Parciales/nav.php');
   //require_once('Recursos/conexion.php');

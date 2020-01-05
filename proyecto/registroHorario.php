@@ -279,14 +279,14 @@
 
             <br>
 
-            <div class="row">
+            <!--<div class="row">
               <div class="col-sm-3">
                 <h5>Domingo</h5>
               </div>
             </div>
 
 
-            <div class="row">
+             <div class="row">
               <div class="col-sm-3">
                 <span> <i class="fa fa-hourglass icono-izquierdo"></i>Hora de entrada </span>
               </div>
@@ -313,7 +313,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             
             <br>
             <div class="row justify-content-md-center">

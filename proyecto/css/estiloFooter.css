@@ -9,6 +9,9 @@ footer{
     background-color: #406D96;
     text-align: center;
     color: #A8D0DA;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 footer a{

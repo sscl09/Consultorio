@@ -51,9 +51,9 @@
         if (empty($errores)){
             $errores = inicioSesion ("Administrador", $usuario, $password, $con);
         }
-        else {
+        if (empty($errores)){
             $errores [] = 'Usuario no registrado';
-        }
+        } 
         $con -> close();
         return $errores;
     }

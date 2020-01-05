@@ -11,7 +11,7 @@
 ?>
 
     <!-- Contenedor principal : Cuerpo de la página -->
-    <div class="container" id="pagina-agenda">
+    <div class="container" id="pagina-registro">
       <div id="superior">
         
         <div id="tabla">

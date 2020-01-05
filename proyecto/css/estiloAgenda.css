@@ -39,8 +39,6 @@
 		border-radius: 10px;
 		padding-bottom: 2%;
 		background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(255,255,255,0.39) 100%);
-
-
 	}
 	#mes_sig{
 		text-align: right;
@@ -76,6 +74,9 @@
 		border: solid 0.5px black;
 		justify-content: center;
 		padding: 0.1%;
+		    overflow:hidden;
+    	white-space:nowrap;
+    	text-overflow: ellipsis;
 	}
 	.cont_btn{
 		width: 96%;
@@ -96,11 +97,11 @@
 	position: fixed;
 	border: solid 1px black;
 	border-radius: 15px;
-	top: 15%;
+	top: 10%;
 	left: 25%;
 	z-index: 100;
 	width: 50%;
-	height: 70%;
+	height: 80%;
 	padding-top: 2%;
 	padding-bottom: 1%;
 
