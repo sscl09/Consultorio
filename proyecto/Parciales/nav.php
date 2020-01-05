@@ -46,7 +46,7 @@
                     </li>
                 ';
               }
-              if (isset($_SESSION['administrador'])){
+              elseif (isset($_SESSION['administrador'])){
                 echo'
                       <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,7 +73,7 @@
                 ';
                 
               }
-              if (isset($_SESSION['secretaria'])){
+              elseif (isset($_SESSION['secretaria'])){
                 echo'
                     <li><a class="nav-item nav-link" href="agenda.php">Agenda</a></li>
                     
