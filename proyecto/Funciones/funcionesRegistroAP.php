@@ -23,7 +23,10 @@
         $declaracion -> close();
         $con -> close();
 
-        if($resultado != 1){
+        if($resultado == 1){
+            header('Location: registroTutor.php');
+        }
+        else{
             $errores[] = 'Algo salió mal. Inténtelo más tarde';
         }
     

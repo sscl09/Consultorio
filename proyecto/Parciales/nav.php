@@ -75,7 +75,7 @@
               }
               elseif (isset($_SESSION['secretaria'])){
                 echo'
-                    <li><a class="nav-item nav-link" href="agenda.php">Agenda</a></li>
+                    <li><a class="nav-item nav-link" href="#">Agenda</a></li>
                     
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

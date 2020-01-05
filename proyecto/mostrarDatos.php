@@ -52,7 +52,7 @@
                     Antecedentes Perinatales
                 </button>
                 <button class="pestana" id="P3" onclick="cambiarPestana(3)">
-                    Antecedentes Patologicos
+                    Tutor
                 </button>
                 <button class="pestana" id="P4" onclick="cambiarPestana(4)">
                     Vacunas
@@ -66,13 +66,8 @@
                     <?php echo $info ['antecedentesPerinatales'];?>
                 </div>
                 <div class="contenidoPestana" id="AntecedentesPatologicos">
-                    tercero<br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <?php echo $info ['tutor'] ;?>
+                
                 </div>
                 <div class="contenidoPestana" id="Vacunas">
                 

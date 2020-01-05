@@ -11,6 +11,7 @@
 
         $info ['datosGenerales'] = obtenerDatosGenerales ($con);
         $info ['antecedentesPerinatales'] = obtenerAntecedentesPerinatales($con);
+        $info ['tutor'] = obtenerTutor($con);
 
         return $info;
     }
@@ -101,7 +102,7 @@
                 <div class="form-group">
                     <div class="input-group"> 
                     <div class="campo-contenedor">
-                        <textarea class="form-control" name="alergias" cols="30" rows="5" disabled>'.$alergias.'</textarea>
+                        <textarea class="form-control" name="alergias" cols="30" rows="3" disabled>'.$alergias.'</textarea>
                     </div>
                     </div>
                 </div>
@@ -115,7 +116,8 @@
     }
 
     function obtenerTutor ($con){
-        $declaracion = $con -> prepare ("SELECT * FROM `Antecedentes_Perinatales` WHERE  `ID_Paciente` = ?");
+
+        $declaracion = $con -> prepare ("SELECT `ID_Tutor` FROM `Paciente_Tutor` WHERE `ID_Paciente` = ?");
         $declaracion -> bind_param("i", $_SESSION['pacienteActual']);
         $declaracion -> execute();
         $resultado = $declaracion -> get_result();
@@ -123,6 +125,133 @@
         $linea = $resultado -> fetch_assoc();
         $declaracion -> free_result();
         $declaracion -> close();
+
+        if ($cantidad == 0){
+          return "No se encontraron tutores";
+        }
+        else{
+          $declaracion = $con -> prepare ("SELECT * FROM `Tutor` WHERE `ID_Tutor` = ?");
+          $declaracion -> bind_param("i", $linea['ID_Tutor']);
+          $declaracion -> execute();
+          $resultado = $declaracion -> get_result();
+          $cantidad = mysqli_num_rows($resultado);
+          $linea = $resultado -> fetch_assoc();
+          $declaracion -> free_result();
+          $declaracion -> close();
+
+          if ($linea['Nombre'] == null){
+            $linea['Nombre'] = "-";
+          }
+          if ($linea['Telefono'] == null){
+            $linea['Telefono'] = "-";
+          }
+          if ($linea['Correo'] == null){
+            $linea['Correo'] = "-";
+          }
+          if ($linea['Domicilio'] == null){
+            $linea['Domicilio'] = "-";
+          }
+
+
+          $tutor = '
+          <div class="row justify-content-md-center">
+              <div class="col-sm-6">
+              <div class="form-group">
+                  <div class="input-group"> 
+                  <div class="campo-contenedor">
+                  <h5>Nombre</h5>
+                  </div>
+                  </div>
+              </div>
+              </div>
+
+              <div class="col-sm-6">
+              <div class="form-group">
+                  <div class="input-group"> 
+                  <div class="campo-contenedor">
+                  <h5>Telefono</h5>
+                  </div>
+                  </div>
+              </div>
+              </div>
+          </div> 
+          <div class="row justify-content-md-center">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="input-group"> 
+                <div class="campo-contenedor">
+                  <span> <i class="fa fa-user icono-izquierdo"></i></span>
+                  <input type="text" class="form-control" name="nombre" value=" '.$linea['Nombre'].' '. $linea['Apellido_paterno']. ' ' . $linea['Apellido_materno'] .'"disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="input-group"> 
+                <div class="campo-contenedor">
+                  <span> <i class="fa fa-phone icono-izquierdo"></i></span>
+                  <input type="text" class="form-control" name="nombre" value="'.$linea['Telefono'].'" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <br>
+        <div class="row ">
+              <div class="col-sm-6">
+              <div class="form-group">
+                  <div class="input-group"> 
+                  <div class="campo-contenedor">
+                  <h5>Correo</h5>
+                  </div>
+                  </div>
+              </div>
+              </div>
+
+            
+          </div> 
+          <div class="row ">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="input-group"> 
+                <div class="campo-contenedor">
+                  <span> <i class="fa fa-envelope icono-izquierdo"></i></span>
+                  <input type="text" class="form-control" name="nombre" value=" '.$linea['Correo'].'"disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <br>
+        <div class="row ">
+
+              <div class="col-sm-6">
+              <div class="form-group">
+                  <div class="input-group"> 
+                  <div class="campo-contenedor">
+                  <h5>Domicilio</h5>
+                  </div>
+                  </div>
+              </div>
+              </div>
+          </div>
+
+            <div class="row justify-content-md-center">
+                <div class="col-sm-12">
+                <div class="form-group">
+                    <div class="input-group"> 
+                    <div class="campo-contenedor">
+                        <textarea class="form-control" name="alergias" cols="30" rows="3" disabled>'.$linea['Domicilio'].'</textarea>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+          
+          ';
+          return $tutor;
+        }
     }
 
     function obtenerAntecedentesPerinatales($con){
