@@ -7,7 +7,7 @@
     $NombreDB = "Consultorio";
     $PuertoDB = "8080";
 
-    $con = @new mysqli($nombreServidor,$UsuarioBD,$PasswordDB,$NombreDB,$PuertoDB);
+    $con = @new mysqli($nombreServidor,$UsuarioBD,$PasswordDB,$NombreDB);
     if ($con -> connect_error){
         die('Conexión no establecida: ' .$con -> connect_error);
     }

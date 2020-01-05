@@ -9,6 +9,7 @@ $(document).ready(function(){
     var fechaPrimera = hoy.getFullYear() + "-" + mes + "-" + dia;
     var fechaUltima = null;
 
+    console.log( ObtenerColumna(fechaPrimera));
     var tamaño = ObtenerColumna(fechaPrimera).length;
     var auxColorDiv = null;
     var row = null;
@@ -40,21 +41,6 @@ $(document).ready(function(){
     $("#Btn_cerrar").click(function(){
         $("#formulario").css({"display" : "none"});
     });
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     function ActualizarTabla(){
         var NmesFinal = fechaUltima.split('-')[1].split('0').length == 2 ? fechaUltima.split('-')[1].split('0')[1] : fechaUltima.split('-')[1].split('0')[0] ; 

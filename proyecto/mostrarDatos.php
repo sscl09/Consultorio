@@ -6,34 +6,38 @@
 
 
 
-//   if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['ficha']) && validarFicha($_POST['ficha'])){
-//     if (!empty($_POST['honey'])){
-//       return header ('Location: index.php');
-//     }
-//     if (!isset($_SESSION['administrador'])){
-//       return header ('Location: index.php');
-//     }
-//     $campos = [
-//       'nombre' => 'Nombre',
-//       'apellido_paterno' => 'Apellido paterno',
-//       'apellido_materno' => 'Apellido materno',
-//       'domicilio' => 'Domicilio',
-//       'cedula_profesional' => 'Cédula profesional',
-//       'cedula_especialidad' => 'Cédula de especialidad',
-//       'correo' => 'Correo electrónico',
-//       'telefono' => 'Teléfono',
-//       'password' => 'Contraseña',
-//       'passwordCopy' => 'Copia de contraseña',
-//       'terminos' => 'Terminos y condiciones'
-//     ];
-    
-//     $errores = validarCampos ($campos);
-//     $errores = array_merge($errores, compararPassword($_POST['password'],$_POST['passwordCopy']));
+  if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['ficha']) && validarFicha($_POST['ficha'])){
+    if (!empty($_POST['honey'])){
+      return header ('Location: index.php');
+    }
+    if (!isset($_SESSION['medico'])){
+      return header ('Location: index.php');
+    }
+    $campos = [
+      'Sintomas' => 'Sintomas',
+      'Alimentacion_Horario' => 'Horario de alimentacion',
+      'Peso' => 'Peso',
+      'Talla' => 'Talla',
+      'Freq_Cardiaca' => 'Frecuencia cardíaca',
+      'Freq_Respiratoria' => 'Frecuencia respiratoria',
+      'Perimetro_cefalico' => 'Perímetro cefálico',
+      'Segmento_Superior' => 'Segmento superior',
+      'Segmento_Inferior' => 'Segmento inferior',
+      'Estudios' => 'Estudios',
+      'Diagnostico' => 'Diagnostico',
+      'Tratamiento' => 'Tratamiento',
+      'Referencias_Espacialidad' => 'Referencia a espacialidad'
 
-//     if (empty($errores)){
-//       $errores = registro();
-//     }
-//   }
+
+    ];
+    
+    $errores = validarCampos ($campos);
+    $errores = array_merge($errores, compararPassword($_POST['password'],$_POST['passwordCopy']));
+
+    if (empty($errores)){
+      $errores = registro();
+    }
+  }
 
   $titulo = "Consultorio Pediátrico | Paciente";
   require_once('Parciales/arriba.php');
@@ -79,7 +83,7 @@
       <br><br><br>
       <div class="row">
         <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" id = "registro-medico" >
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" id = "registro-consulta" >
             <input type="hidden" name="ficha" value="<?php echo fichaCSRF(); ?>">
             <input type="hidden" name="honey" value="">
             <hr>

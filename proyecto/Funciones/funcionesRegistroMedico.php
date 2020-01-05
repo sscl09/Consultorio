@@ -36,8 +36,19 @@
         $con -> close();
 
         if($resultado == 1){
-            $_SESSION['usuarioNuevo'] = $nombre . " " . $apellido_paterno;
-            header('Location: registroExitoso.php');
+
+            $declaracion = $con -> prepare ("SELECT `ID_Medico` FROM `Medico` WHERE  `Correo` = ? OR `Telefono` = ?");
+            $declaracion -> bind_param("ss", $correo, $telefono);
+            $declaracion -> execute();
+            $resultado = $declaracion -> get_result();
+            $cantidad = mysqli_num_rows($resultado);
+            $linea = $resultado -> fetch_assoc();
+            $declaracion -> free_result();
+            $declaracion -> close();
+
+            $_SESSION['usuarioNuevo'] = $nombre ." ". $apellido_paterno;
+            $_SESSION['id_medico'] = $linea[`ID_Medico`];
+            header('Location: horario.php');
         }
         else{
             $errores[] = 'Algo salió mal. Inténtelo más tarde';
